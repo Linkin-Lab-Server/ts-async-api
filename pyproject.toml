@@ -13,7 +13,11 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dynamic = ["version"]
-dependencies = ["openai>=1.99.9"]
+dependencies = [
+    "openai>=1.99.9",
+    "pydantic>=2.11.7",
+    "pydantic-settings>=2.10.1",
+]
 
 [dependency-groups]
 dev = [
