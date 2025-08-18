@@ -1,0 +1,31 @@
+[package]
+name = "ts-async-api"
+version = "0.1.0"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "ts_async_api"
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1.0.99"
+futures = "0.3.31"
+hound = "3.5.1"
+log = "0.4.27"
+parking_lot = "0.12.4"
+pretty_env_logger = "0.5.0"
+pyo3 = "0.25.0"
+pyo3-async-runtimes = { version = "0.25", features = [
+    "attributes",
+    "tokio-runtime",
+] }
+tokio = "1.47.1"
+tracing = { version = "0.1.41", features = ["log"] }
+tsclientlib = { git = "https://github.com/plusls/tsclientlib.git", package = "tsclientlib", branch = "fix_reconnect_panic"}
+# tsclientlib = { path = "../tsclientlib/tsclientlib" }
+tsproto-packets = { git = "https://github.com/plusls/tsclientlib.git", package = "tsproto-packets" , branch = "fix_reconnect_panic"}
+# tsproto-packets = { path = "../tsclientlib/utils/tsproto-packets" }
+
+audiopus = { version = "0.3.0-rc.0" }
+async-spin-sleep = "0.5.1"
